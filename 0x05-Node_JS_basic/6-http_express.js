@@ -9,8 +9,8 @@ const port = 1245;
  * HTTP server should listen on port 1245
  * Displays Hello Holberton School! in the page body for the endpoint /
  */
-app.get('/', (_, res) => {
-  res.send('Hello Holberton School!');
+app.get('/', (_, results) => {
+  results.send('Hello Holberton School!');
 });
 
 app.listen(port, () => {
