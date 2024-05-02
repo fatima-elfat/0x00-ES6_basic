@@ -10,7 +10,7 @@
  * return the string Error
  */
 
-function calculateNumber(a, b) {
+function calculateNumber(type, a, b) {
     if (type === 'SUM') {
         return Math.round(a) + Math.round(b);
     }

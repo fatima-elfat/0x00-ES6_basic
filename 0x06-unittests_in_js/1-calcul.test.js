@@ -12,7 +12,7 @@ describe('calculateNumber', function () {
             assert.equal(calculateNumber('SUM', 1, 2), 3);
         });
         it('should return 4', function () {
-            assert.equal(calculateNumber('SUM', 1.6, 3), 4);
+            assert.equal(calculateNumber('SUM', 0.6, 3), 4);
         });
         it('should return 5', function () {
             assert.equal(calculateNumber('SUM', 2, 3.4), 5);
@@ -24,7 +24,7 @@ describe('calculateNumber', function () {
   
     describe('type == "SUBTRACT"', function () {
         it('should return -2', function () {
-            assert.equal(calculateNumber('SUBTRACT', 3, 4.1), -2);
+            assert.equal(calculateNumber('SUBTRACT', 3, 5.1), -2);
         });
         it('should return 0', function () {
             assert.equal(calculateNumber('SUBTRACT', 2, 2.0), 0);
