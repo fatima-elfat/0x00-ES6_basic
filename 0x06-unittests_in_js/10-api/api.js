@@ -11,6 +11,8 @@ const port = 7865;
  * :username where :username is the value of the body variable userName.
  */
 
+app.use(express.json());
+
 app.get('/', (req, res) => {
   res.end('Welcome to the payment system');
 });
@@ -27,7 +29,10 @@ app.get('/available_payments', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  const username = req.body.userName;
+  let username = '';
+  if (req.body) {
+    username = req.body.userName;
+  }
   res.end(`Welcome ${username}`);
 });
 

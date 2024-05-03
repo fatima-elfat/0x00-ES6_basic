@@ -52,12 +52,30 @@ describe('Integration Testing', () => {
     });
   });
 
-  it('POST /login', (done) => {
-    request.post(`${url}/login`, {json: {userName: 'Luffy'}},
-      (error, result, body) => {
-        expect(result.statusCode).to.be.equal(200);
-        expect(body).to.be.equal('Welcome Luffy');
-        done();
-      });
+  it('POST /login undefined', (done) => {
+    const req = {
+        url: `${url}/login`,
+        method: 'POST',
+    };
+    request.post(req , (error, result, body) => {
+      expect(result.statusCode).to.be.equal(200);
+      expect(body).to.be.equal('Welcome undefined');
+      done();
+    });
+  });
+
+  it('POST /login username luffy', (done) => {
+    const req = {
+        url: `${url}/login`,
+        method: 'POST',
+        json: {
+          userName: 'luffy',
+        },
+    };
+    request.post(req , (error, result, body) => {
+      expect(result.statusCode).to.be.equal(200);
+      expect(body).to.be.equal('Welcome luffy');
+      done();
+    });
   });
 });
